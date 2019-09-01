@@ -3,7 +3,7 @@ applications:
   path: ./applications/registration-server/build/libs/registration-server.jar
   routes:
   - route: registration-pal-san.cfapps.io
-  memory: 250M
+  memory: 750M
   instances: 1
   env:
     REGISTRATION_SERVER_ENDPOINT: https://registration-pal-san.cfapps.io
