@@ -3,10 +3,11 @@ applications:
   path: ./applications/registration-server/build/libs/registration-server.jar
   routes:
   - route: registration-pal-san.cfapps.io
-  memory: 750M
+  memory: 512M
   instances: 1
   env:
     REGISTRATION_SERVER_ENDPOINT: https://registration-pal-san.cfapps.io
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
+    JAVA_OPTS: 'Xmx250m -Xss100m'
   services:
   - tracker-registration-database
