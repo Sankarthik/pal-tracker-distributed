@@ -3,7 +3,7 @@ applications:
   path: ./applications/allocations-server/build/libs/allocations-server.jar
   routes:
   - route: allocations-pal-san.cfapps.io
-  memory: 500M
+  memory: 700M
   instances: 1
   env:
     REGISTRATION_SERVER_ENDPOINT: https://allocations-pal-san.cfapps.io
