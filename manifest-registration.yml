@@ -1,5 +1,5 @@
 applications:
-- name: tracker-registration
+- name: tracker-registration-san
   path: ./applications/registration-server/build/libs/registration-server.jar
   routes:
   - route: registration-pal-san.cfapps.io
