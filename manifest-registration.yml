@@ -8,7 +8,9 @@ applications:
   env:
 #    REGISTRATION_SERVER_ENDPOINT: https://registration-pal-san.cfapps.io
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
+    GRANT_TYPE: client_credentials
 #    JAVA_OPTS: 'Xmx250m -Xss100m'
   services:
   - tracker-registration-database
   - tracker-service-registry-san
+  - tracker-sso
