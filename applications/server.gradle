@@ -10,6 +10,7 @@ dependencies {
 //    compile "org.springframework.cloud:spring-cloud-commons"
     compile "org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:$springSecurityOAuthAutoconfigVersion"
     compile "io.pivotal.spring.cloud:spring-cloud-sso-connector:$springCloudSsoVersion"
+    compile "io.pivotal.spring.cloud:spring-cloud-services-starter-config-client"
 
     compile "com.zaxxer:HikariCP:$hikariVersion"
     compile "mysql:mysql-connector-java:$mysqlVersion"
@@ -30,12 +31,14 @@ bootRun.environment([
         "MANAGEMENT_ENDPOINT_HEALTH_SHOWDETAILS": "always",
         "APPLICATION_OAUTH_ENABLED": true,
         "SECURITY_OAUTH2_CLIENT_CLIENT_ID": "tracker-client",
-        "SECURITY_OAUTH2_CLIENT_CLIENT_SECRET": "supersecret"
+        "SECURITY_OAUTH2_CLIENT_CLIENT_SECRET": "supersecret",
+        "REGISTRATION_SERVER_ENDPOINT": "http://registration-server"
 ])
 
 test.environment([
         "MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE": "*",
-        "MANAGEMENT_ENDPOINT_HEALTH_SHOWDETAILS": "always"
+        "MANAGEMENT_ENDPOINT_HEALTH_SHOWDETAILS": "always",
+        "REGISTRATION_SERVER_ENDPOINT": "http://registration-server"
 ])
 
 springBoot {
